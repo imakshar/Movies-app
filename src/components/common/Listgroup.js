@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class Listgroup extends Component {
   render() {
-    const { genres, handleGenre, genreId, title } = this.props;
+    const { genres, handleGenre, title } = this.props;
     // console.log("is id", genreId);
     return (
       <div>

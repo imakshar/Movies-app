@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import Movies from "./Movies";
 import { getMovies } from "./movieList";
-import { Grid, Button, withStyles, Tab, Tabs } from "@material-ui/core";
+import { Grid, withStyles, Tab, Tabs } from "@material-ui/core";
 import PageNavigation from "./PageNavigation";
 import Listgroup from "./common/Listgroup";
 import paginate from "./../utils/paginate";
 import Box from "@material-ui/core/Box";
 import { getGenres } from "./genreList";
-import { Link, Route, BrowserRouter, Switch } from "react-router-dom";
-import Home from "./Home";
 import Action from "./Action";
 const styles = {
   Buttonspace: {
@@ -32,7 +30,7 @@ class MovieApp extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    if (props.match.params.category != state.category) {
+    if (props.match.params.category !== state.category) {
       state.category = props.match.params.category;
     }
     // console.log(props.match.params.category,state.category);
