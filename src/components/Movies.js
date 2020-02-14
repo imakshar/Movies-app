@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Like from "./common/Like";
+// import Like from "./common/Like";
 import { IconButton, Icon, Fab } from "@material-ui/core";
 
 export default class Movies extends Component {

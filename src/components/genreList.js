@@ -1,15 +1,26 @@
 export const genres = [
   {
     id: 0,
-    name: "Action"
+    name: "Action",
+    url:"/movies/action"
   },
   {
     id: 1,
-    name: "Comedy"
+    name: "Comedy",
+    url:"/movies/comedy"
+
   },
   {
     id: 2,
-    name: "Drama"
+    name: "Drama",
+    url:"/movies/drama"
+
+  },
+  {
+    id:4,
+    name: "Horror",
+    url:"/movies/horror"
+
   }
 ];
 
