@@ -8,6 +8,8 @@ import paginate from "./../utils/paginate";
 import Box from "@material-ui/core/Box";
 import { getGenres } from "./genreList";
 import Action from "./Action";
+import Movieform from "./Movieform";
+import { Redirect } from "react-router-dom";
 const styles = {
   Buttonspace: {
     marginLeft: 10
@@ -68,13 +70,11 @@ class MovieApp extends Component {
     //   if (element.id === movie.id) {
     //     element.liked = true;
     //   }
-    //   return element;
-    // });
-    // console.log("temp is", temp);
+    //   return element; 
     // this.setState({ movies: temp });
   };
   handlePageChange = page => {
-    console.log(page);
+    // console.log(page);
     this.setState({ currentpage: page });
   };
 
@@ -161,7 +161,9 @@ class MovieApp extends Component {
                   <Route exact path="/movies/drama" render={()=> <Listgroup {...this.state}/>} />
                 </Switch>
                 :null} */}
-              {this.state.category ? (
+
+                
+              { this.state.genres.filter(c=>c.url===this.props.match.url).length ===1  ? (
                 <Action
                   movies={this.filteredMovies()}
                   handleGenre={this.handleGenre}

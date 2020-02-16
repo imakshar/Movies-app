@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import Like from "./common/Like";
-import { Icon, Fab } from "@material-ui/core";
-
+import { Icon, Fab, Button } from "@material-ui/core";
+import {Link, Route } from "react-router-dom"
 export default class Movies extends Component {
   render() {
     return (
@@ -19,7 +19,11 @@ export default class Movies extends Component {
           <tbody>
             {this.props.movies.map((movie, index) => (
               <tr key={movie.id}>
-                <td>{movie.id}</td>
+                <td>
+                  <Link to={`/movies/movie/${movie.id}`}>{movie.id}
+                  </Link>
+                </td>
+
                 <td>{movie.title}</td>
                 <td>{movie.genre}</td>
                 <td>{movie.rating}</td>
@@ -34,7 +38,7 @@ export default class Movies extends Component {
                     onClick={() => this.props.handleLike(movie.id)}
                   >
                     {movie.liked ? (
-                      <Icon size="small"> favorite</Icon>
+                      <Icon size="small">favorite</Icon>
                     ) : (
                       <Icon>favorite_border</Icon>
                     )}
